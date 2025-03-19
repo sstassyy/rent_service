@@ -1,0 +1,48 @@
+type OfferLocation = {
+    latitude: number;
+    longitude: number;
+    zoom: number;
+};
+
+type CityOffer = {
+    name: string;
+    location: OfferLocation;
+};
+
+type HostOffer = {
+    name: string;
+    avatarUrl: string;
+    isPro: boolean;
+};
+
+export type FullOffer = {
+    id: string;
+    title: string;
+    type: string;
+    price: number;
+    city: CityOffer;
+    location: OfferLocation;
+    isFavorite: boolean;
+    isPremium: boolean;
+    rating: number;
+    description: string;
+    bedrooms: number;
+    goods: string[];
+    host: HostOffer;
+    images: string[];
+    maxAdults: number;
+    previewImage: string; // 🔹 Добавлено свойство
+};
+
+export type OffersList = {
+    isPremium: boolean; // 🔹 Исправлен `any` на `boolean`
+    id: string;
+    title: string;
+    type: string;
+    price: number;
+    city: CityOffer;
+    location: OfferLocation;
+    isFavorite: boolean;
+    rating: number;
+    previewImage: string;
+};
